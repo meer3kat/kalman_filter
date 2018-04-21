@@ -23,8 +23,8 @@ for i = 1:1:length(data)-1
         
     x1(i+1) = theta(1) * xm(i);
     p1(i+1) = theta(1) * pm(i) * theta(1)' + theta(3);
-    sk(i+1) = theta(2) * p1(i) *theta(2)' + theta(4);
-    L(i+1) = -0.5*log(2*pi) - 0.5*log(abs(sk(i))) - 0.5 * (data(i) - theta(2)*x1(i))' *(sk(i)^(-1))*(data(i) - theta(2)*x1(i));
+    sk(i+1) = theta(2) * p1(i+1) *theta(2)' + theta(4);
+    L(i+1) = -0.5*log(2*pi) - 0.5*log(abs(sk(i+1))) - 0.5 * (data(i+1) - theta(2)*x1(i+1))' *(sk(i+1)^(-1))*(data(i+1) - theta(2)*x1(i+1));
         
 
 end
