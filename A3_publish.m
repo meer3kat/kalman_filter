@@ -1,6 +1,6 @@
 %% Assignment 3 - Kalman filter for parameter estimation
 %
-% Written by Peili Guo (peili.guo.7645@student.uu.se) and Francisco Jos?
+% Written by Peili Guo (peili.guo.7645@student.uu.se) and Francisco José
 % Peralta Alguacil (franciscojose.peraltaalguacil.0481@student.uu.se)
 % This report is for Computational Finance: Calibration and Estimation
 % Assignment 3. 
