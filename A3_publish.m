@@ -1,24 +1,24 @@
 %% Assignment 3 - Kalman filter for parameter estimation
 %
-% Written by Peili Guo (peili.guo.7645@student.uu.se) and Francisco José
+% Written by Peili Guo (peili.guo.7645@student.uu.se) and Francisco Jos?
 % Peralta Alguacil (franciscojose.peraltaalguacil.0481@student.uu.se)
 % This report is for Computational Finance: Calibration and Estimation
 % Assignment 3. 
 %
-% In this project we apply kalman filter to pricing models and optimise it
+% In this project we apply Kalman filter to pricing models and optimise it
 % to find the corresponding set of parameters. 
 %
 % First, we build the Kalman filter and observe how it works with
-% prediction and data update. and try optimization of parameters with 10
-% interations of "guessing optimizer".
+% prediction and data update and try to optimize its parameters with 10
+% interations of a "guessing optimizer".
 %
 % In the second part, the maximum likelihood was computed and by calling fminsearch
-% we find the set of parameter that maximize the likelihood of the
-% filtering processs. And this methods was also applied to ABB stock data
-% on 2015-02-05.
+% we find the set of parameters that maximize the likelihood of the
+% filtering process. And this procedure was also applied to ABB stock data
+% taken on 2015-02-05, the day when its Q4 report was released.
 %
 % In the last part, we plot the residual and visualize it with histogram to
-% check if it is normal distributed. 
+% check if it is normally distributed. 
 
 clear
 close all
@@ -324,19 +324,22 @@ ylabel('Frequency');
 legend({"Residual", "20*N(0,1)"},'FontSize',12);
 title("Residual dataset1",'FontSize',16);
 
-%% Refletions
+%% Reflections
 
-% In the multi parameter optimisation process, fminsearch are likely to
-% find the local minimum. It improved slightly of the predictions. 
-% The optimization worked better on dataset1 with the ABB stock prices. We
-% also plot the residual to see if it is normally distributed. For
-% dataset0, we observe large residuals, which might be related to the Q4
-% report release. 
-
+% In the parameter optimisation process, the function fminsearch is likely
+% to find a local minimunm of the objective function. That is why the
+% obtained results might be susceptible to slight changes in the initial
+% guesses (specially for the dataset1, where we had to find the initial
+% guess ourselves).
+% It is interesting to mention that, according to the obtained plots, it
+% seems that the optimization process worked better on dataset1, which
+% correspond to the ABB stock prices. However, when computing the residual
+% for it, we could observe that it was not proportional to N(0,1), which
+% could be because of the fact that the Q4 report was released on that
+% date.
 
 %% Functions called in the scripts
 
 dbtype('KalmanFilterFunc.m');
 dbtype('max_like1.m');
 dbtype('max_like2.m');
-
